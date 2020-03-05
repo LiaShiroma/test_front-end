@@ -1,0 +1,6 @@
+Nesse doc você irá encontrar as orientações de como você deve seguir com esse desafio.
+
+1. replicar a lp da imagem lp.jpg
+2. utilizar a fonte https://fonts.google.com/specimen/Merriweather?selection.family=Merriweather
+3. livre para escolher a maneira de desenvolvimento da LP.
+4. As imagens utilizadas na LP, podem ser qualquer outra, não precisam ser do layout enviado.

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lia Shiroma</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row justify-content-center ">
+            <div class="col-sm-8 alert alert-primary mt-5">
+                <p>
+                    Nesse bloco preciso que seja feita a validação do formulário, ou seja, os campos com marcação em
+                    <strong style="color:red;">*</strong> precisam ser validados antes do submit do form.<br />
+                    <strong> Obs.: a validação deve ser feita via <strong>JS</strong>, e não com o require padrão do
+                        html.</strong>
+                    <hr>
+                </p>
+                <form action="" name="formuser">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="email">Email*</label>
+                            <input type="text" class="form-control" id="email">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputPassword4">Senha*</label>
+                            <input type="password" class="form-control" id="password">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Nome</label>
+                        <input type="text" class="form-control" id="">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Sobrenome</label>
+                        <input type="text" class="form-control" id="">
+                    </div>
+                    <button type="submit" class="btn btn-primary" onclick="return validate()">Cadastrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row justify-content-center ">
+            <div class="col-sm-8 alert alert-secondary">
+                <p>
+                    Nesse bloco preciso que seja feita a exibição de <strong>CPF</strong> ou <strong>CNPJ</strong>
+                    conforme selecionado, <br />
+                    caso seja escolhido <strong>CPF</strong> irá exibir o campo <strong>CPF</strong>, caso seja
+                    selecionado <strong>CNPJ</strong>, será exibido <strong>CNPJ</strong>.<br />
+                    <strong>Obs.: As validações de campo também devem ocorrer aqui.</strong>
+                    <hr>
+                </p>
+                <form action="">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="">Email*</label>
+                            <input type="text" class="form-control" id="">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputPassword4">Senha*</label>
+                            <input type="password" class="form-control" id="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Nome</label>
+                        <input type="text" class="form-control" id="">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Sobrenome</label>
+                        <input type="text" class="form-control" id="">
+                    </div>
+                    <div class="form-group">
+                        <input type="radio" name="option" value="cpf" id="option-cpf">
+                        <label for="cpf">CPF</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="radio" name="option" value="cnpj" id="option-cnpj">
+                        <label for="cpf">CNPJ</label>
+                    </div>
+                    <div class="form-group" style="display: none" id="input-cpf">
+                        <label for="">CPF</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="form-group" style="display: none" id="input-cnpj">
+                        <label for="">CNPJ</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-primary" onclick="return validate()">Cadastrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row justify-content-center ">
+            <div class="col-sm-8 alert alert-success">
+                <p>
+                    Nesse bloco preciso que o nome clicado seja inserido tendo da tag com o id
+                    <strong>textClick</strong>.
+                    <hr>
+                </p>
+                <h2 id="textClick">Texto Aqui</h2>
+                <table class="table table-striped table-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Sobrenome</th>
+                            <th scope="col">Idade</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table">
+                        <tr id="user-click" onclick="valueTr(this)"> 
+                            <th scope="row">1</th>
+                            <td class="info">Mark</td>
+                            <td class="info">Otto</td>
+                            <td class="info">19</td>
+                        </tr>
+                        <tr id="user-click" onclick="valueTr(this)">
+                            <th scope="row">2</th>
+                            <td class="info">Jacob</td>
+                            <td class="info">Thornton</td>
+                            <td class="info">25</td>
+                        </tr>
+                        <tr id="user-click" onclick="valueTr(this)">
+                            <th scope="row">3</th>
+                            <td class="info">Larry</td>
+                            <td class="info">the Bird</td>
+                            <td class="info">36</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row justify-content-center ">
+            <div class="col-sm-8 alert alert-warning">
+                <p>
+                    Nesse bloco preciso que <strong>Nome, Sobrenome e Idade</strong>, sejam inseridos em uma nova linha
+                    da tabela a cada vez que clicar em <strong>Cadastrar</strong>.
+                    <hr>
+                </p>
+                <form action="" id="register-form">
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="">Nome:</label>
+                            <input type="text" class="form-control" id="name">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="">Sobrenome:</label>
+                            <input type="text" class="form-control" id="lastname">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="">'Idade:</label>
+                            <input type="text" class="form-control" id="age">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col">
+                            <button type="button" class="btn btn-primary" id="register-btn">Cadastrar</button>
+                        </div>
+                    </div>
+
+                </form>
+                <table class="table table-striped table-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Sobrenome</th>
+                            <th scope="col">Idade</th>
+                        </tr>
+                    </thead>
+                    <tbody id="user-table">
+                        <tr class="user">
+                            <th scope="row">1</th>
+                            <td class="name-info">Mark</td>
+                            <td class="lastname-info">Otto</td>
+                            <td class="age-info">19</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-sm-8 text-center my-5">
+                <h2>BÔNUS</h2>
+            </div>
+        </div>
+        <div class="row justify-content-center ">
+            <div class="col-sm-8 alert alert-danger">
+                <p>
+                    Nesse bloco temos um webservice, ViaCEP, que retorna um endereço quando é enviado um CEP para o
+                    serviço.<br />
+                    Itens a serem considerados:
+                    <od>
+                        <li>A requisição deve ser feita via AJAX.</li>
+                        <li>O consumo das informações deve ser via JSON.</li>
+                        <li>As informações devem ser preenchidas dentro de cada input no form.</li>
+                        <li>Apenas os inputs no form devem ser preenchidos.</li>
+                        <li>O serviço a ser utilizado é <a href="https://viacep.com.br/" target="_blank">ViaCEP</a>.
+                        </li>
+                        <li>A validação do campo CEP, pode ser feita com require do HTML.</li>
+                    </od>
+                    <hr>
+                </p>
+                <form action="">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="">CEP:</label>
+                            <input type="text" class="form-control" id="">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="">Rua/Logradouro:</label>
+                            <input type="text" class="form-control" id="">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="">Complemento:</label>
+                            <input type="text" class="form-control" id="">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="">Bairro:</label>
+                            <input type="text" class="form-control" id="">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="">Cidade/Localidade:</label>
+                            <input type="text" class="form-control" id="">
+                        </div>
+                    </div>
+
+                   
+                    <button type="button" class="btn btn-primary">Consultar</button>
+                </form>
+                <h2 class="my-5">VERSÃO 2</h2>
+                <strong> 4.1 </strong>Quando clicar no botão Cadastrar, após uma consulta, o valor retornado deve ser
+                colocado na tabela abaixo, <br />
+                assim preenchendo uma nova linha a cada consulta.
+                <form action="" id="cep-register-form">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="">CEP:</label>
+                            <input type="text" class="form-control" id="cep">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="">Rua/Logradouro:</label>
+                            <input type="text" class="form-control" id="address">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="">Complemento:</label>
+                            <input type="text" class="form-control" id="complement">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="">Bairro:</label>
+                            <input type="text" class="form-control" id="neighborhood">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="">Cidade/Localidade:</label>
+                            <input type="text" class="form-control" id="city">
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-primary"  id="cep-consult-btn">Consultar</button>
+                    <button type="button" class="btn btn-primary" id="cep-register-btn">Cadastrar</button>
+
+                    
+                    <!-- abaixo coloquei uma linha de exemplo de como deve ser exibido as informações -->
+                    <table class="table table-bordered table-dark mt-5">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">CEP</th>
+                                <th scope="col">Rua/Logradouro</th>
+                                <th scope="col">Complemento</th>
+                                <th scope="col">Bairro</th>
+                                <th scope="col">Cidade/Localidade</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cep-table">
+                            <tr>
+                                <th scope="row">1</th>
+                                <td class="info-cep">06587-000</td>
+                                <td class="info-address">Rua dos Amores</td>
+                                <td class="info-complement">Casa 4</td>
+                                <td class="info-neighborhood">Itamorantin</td>
+                                <td class="info-city">São Paulo</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
